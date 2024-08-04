@@ -34,5 +34,5 @@ def emotion_detector(text_to_analyze):
         "fear": emotion_predictions["fear"],
         "joy": emotion_predictions["joy"],
         "sadness": emotion_predictions["sadness"],
-        "dominant_emotion": dominant_emotion
+        "The dominant emotion is": dominant_emotion
     }
