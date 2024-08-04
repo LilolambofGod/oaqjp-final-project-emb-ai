@@ -17,14 +17,14 @@ def sent_detector():
     # Retrieve the text to analyze from the request arguments
     text_to_analyze = request.args.get('textToAnalyze')
     dominant_emotion = emotion_detector(text_to_analyze)
-   
+
     # Check if the emotion_prediction is None, indicating an error or invalid input
     if dominant_emotion is None:
-        return "Invalid input! Try again."
+        return "Invalid text! Please try again!"
         # Return a formatted string with the sentiment label and score
     else:
         return "For the given statement, the system response is {}.".format(dominant_emotion)
-
+    
 @app.route("/")
 def render_index_page():
     ''' This function initiates the rendering of the main application
