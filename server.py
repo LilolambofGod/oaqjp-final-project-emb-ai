@@ -1,14 +1,14 @@
 ''' Executing this function initiates the application of sentiment
     analysis to be executed over the Flask channel and deployed on
-    localhost:5000.
-'''
-# Import Flask, render_template, request from the flask pramework package : 
+    localhost:5000.'''
+
+# Import Flask, render_template, request from the flask pramework package:
 from flask import Flask, render_template, request
 
-# Import the sentiment_analyzer function from the package created: 
+# Import the sentiment_analyzer function from the package created:
 from EmotionDetection.emotion_detection import emotion_detector
 
-#Initiate the flask app :
+# Initiate the flask app:
 app = Flask("Emotion Detector")
 
 @app.route("/emotionDetector")
@@ -22,9 +22,9 @@ def sent_detector():
     if dominant_emotion is None:
         return "Invalid text! Please try again!"
         # Return a formatted string with the sentiment label and score
-    else:
-        return "For the given statement, the system response is {}.".format(dominant_emotion)
-    
+
+    return f"For the given statement, the system response is {text_to_analyze}."
+
 @app.route("/")
 def render_index_page():
     ''' This function initiates the rendering of the main application
